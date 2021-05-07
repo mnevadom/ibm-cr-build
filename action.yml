@@ -1,0 +1,30 @@
+name: "IBM CR Build"
+description: "IBM CR Build"
+inputs:
+  url: 
+    description: "url server"
+    required: true
+  namespace: 
+    description: "namespace name"
+    required: true
+  imagename: 
+    description: "image name"
+    required: true
+  buildnr: 
+    description: "build nr"
+    required: true
+  dir:
+    description: "dir to dockerfile"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.url }}
+    - ${{ inputs.namespace }}
+    - ${{ inputs.imagename }}
+    - ${{ inputs.buildnr }}
+    - ${{ inputs.dir }}
+branding:
+  color: 'green'
+  icon: 'at-sign'
