@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 REGISTRY_URL=$1
 REGISTRY_NAMESPACE=$2
@@ -29,6 +30,6 @@ else
 fi
 
 echo -e "Compilando la imagen del contenedor"
-set -x
+
 ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER .
-set +x
+
