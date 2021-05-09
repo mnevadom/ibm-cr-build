@@ -19,7 +19,13 @@ echo "BUILD_NUMBER=${BUILD_NUMBER}"
 # Para revisar o cambiar las opciones de compilación utilice:
 # ibmcloud cr build --help
 
+echo "ls ..."
+ls
+
 cd $DIR
+
+echo "ls ..."
+ls
 
 echo -e "Comprobando el Dockerfile en la raíz de repositorio"
 if [ -f Dockerfile ]; then 
