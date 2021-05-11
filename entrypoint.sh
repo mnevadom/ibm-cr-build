@@ -40,6 +40,10 @@ fi
 
 echo -e "Compilando la imagen del contenedor"
 
+ibmcloud update --force
+
+echo $HOME
+
 ibmcloud --help
 
 ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER .
