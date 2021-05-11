@@ -7,6 +7,8 @@ IMAGE_NAME=$3
 BUILD_NUMBER=$4
 DIR=$5
 
+ls /github/home/.bluemix
+
 echo -e "Variables de entorno de compilación:"
 echo "REGISTRY_URL=${REGISTRY_URL}"
 echo "REGISTRY_NAMESPACE=${REGISTRY_NAMESPACE}"
@@ -23,9 +25,6 @@ echo "ls ..."
 ls
 
 cd $DIR
-
-echo "ls ..."
-ls
 
 echo -e "Comprobando el Dockerfile en la raíz de repositorio"
 if [ -f Dockerfile ]; then 
