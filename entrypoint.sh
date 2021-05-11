@@ -1,14 +1,15 @@
 #!/bin/bash
 set -e
 
+
+echo "my home is"
+echo $HOME
+
 REGISTRY_URL=$1
 REGISTRY_NAMESPACE=$2
 IMAGE_NAME=$3
 BUILD_NUMBER=$4
 DIR=$5
-
-echo "my home is"
-echo $HOME
 
 ls /github/home/.bluemix
 cat /github/home/.bluemix/config.json
