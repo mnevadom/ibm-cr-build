@@ -2,8 +2,7 @@
 set -e
 
 
-echo "my home is"
-echo $HOME
+cp -r /github/home/.bluemix $HOME
 
 REGISTRY_URL=$1
 REGISTRY_NAMESPACE=$2
@@ -11,8 +10,8 @@ IMAGE_NAME=$3
 BUILD_NUMBER=$4
 DIR=$5
 
-ls /github/home/.bluemix
-cat /github/home/.bluemix/config.json
+ls $HOME/.bluemix
+cat $HOME/.bluemix/config.json
 
 echo -e "Variables de entorno de compilación:"
 echo "REGISTRY_URL=${REGISTRY_URL}"
