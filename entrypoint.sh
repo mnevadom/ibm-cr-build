@@ -8,6 +8,7 @@ BUILD_NUMBER=$4
 DIR=$5
 
 ls /github/home/.bluemix
+cat /github/home/.bluemix/config.json
 
 echo -e "Variables de entorno de compilación:"
 echo "REGISTRY_URL=${REGISTRY_URL}"
