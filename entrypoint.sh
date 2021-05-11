@@ -7,6 +7,9 @@ IMAGE_NAME=$3
 BUILD_NUMBER=$4
 DIR=$5
 
+echo "my home is"
+echo $HOME
+
 ls /github/home/.bluemix
 cat /github/home/.bluemix/config.json
 
