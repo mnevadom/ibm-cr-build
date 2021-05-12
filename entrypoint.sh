@@ -6,6 +6,7 @@ REGISTRY_NAMESPACE=$2
 IMAGE_NAME=$3
 BUILD_NUMBER=$4
 DIR=$5
+DOCKERFILE=$6
 
 
 echo "My home is "
@@ -32,7 +33,7 @@ fi
 ibmcloud plugin install container-registry -r 'IBM Cloud'
 
 
-ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER .
+ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER --file $DOCKERFILE
 
 echo "My home is "
 echo $HOME
