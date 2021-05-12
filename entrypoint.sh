@@ -17,6 +17,18 @@ echo "REGISTRY_NAMESPACE=${REGISTRY_NAMESPACE}"
 echo "IMAGE_NAME=${IMAGE_NAME}"
 echo "BUILD_NUMBER=${BUILD_NUMBER}"
 
+cd $DIR
+echo "ls ..."
+ls
+
+echo -e "Comprobando el Dockerfile en la raíz de repositorio"
+if [ -f Dockerfile ]; then 
+   echo "Se ha encontrado el Dockerfile"
+else
+    echo "No se ha encontrado el Dockerfile"
+    exit 1
+fi
+
 
 echo RUNNING sudo ibmcloud update 
 
