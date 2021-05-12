@@ -16,6 +16,9 @@ inputs:
   dir:
     description: "dir to dockerfile"
     required: true
+  dockerfile:
+    description: "dockerfile name"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -25,6 +28,7 @@ runs:
     - ${{ inputs.imagename }}
     - ${{ inputs.buildnr }}
     - ${{ inputs.dir }}
+    - ${{ inputs.dockerfile }}
 branding:
   color: 'green'
   icon: 'at-sign'
