@@ -1,30 +1,26 @@
-name: "IBM CR Build"
-description: "IBM CR Build"
+name: "IBM Login"
+description: "login into IBM Cloud"
 inputs:
+  token: 
+    description: "The token to login"
+    required: true
   url: 
-    description: "url server"
+    description: "The url to connect into IBM Cloud"
+    required: false
+  region: 
+    description: "Region name, for example 'us-south' or 'eu-gb'"
     required: true
-  namespace: 
-    description: "namespace name"
-    required: true
-  imagename: 
-    description: "image name"
-    required: true
-  buildnr: 
-    description: "build nr"
-    required: true
-  dir:
-    description: "dir to dockerfile"
+  resourcegroup: 
+    description: "Resource group ID"
     required: true
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.token }}
     - ${{ inputs.url }}
-    - ${{ inputs.namespace }}
-    - ${{ inputs.imagename }}
-    - ${{ inputs.buildnr }}
-    - ${{ inputs.dir }}
+    - ${{ inputs.region }}
+    - ${{ inputs.resourcegroup }}
 branding:
   color: 'green'
   icon: 'at-sign'
