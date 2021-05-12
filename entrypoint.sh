@@ -29,6 +29,8 @@ else
     exit 1
 fi
 
+ibmcloud plugin install container-registry -r 'IBM Cloud'
+
 
 ibmcloud --help
 
