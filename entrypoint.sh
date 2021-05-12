@@ -11,6 +11,11 @@ DIR=$5
 echo "My home is "
 echo $HOME
 
+echo -e "Variables de entorno de compilación:"
+echo "REGISTRY_URL=${REGISTRY_URL}"
+echo "REGISTRY_NAMESPACE=${REGISTRY_NAMESPACE}"
+echo "IMAGE_NAME=${IMAGE_NAME}"
+echo "BUILD_NUMBER=${BUILD_NUMBER}"
 
 
 echo RUNNING sudo ibmcloud update 
