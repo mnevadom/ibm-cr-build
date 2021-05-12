@@ -6,6 +6,9 @@ url=$2
 region=$3
 resourcegroup=$4
 
+echo "My home is "
+echo $HOME
+
 if [ -z $token ]; then
   echo "IBM Login token is required"
   exit 1
@@ -26,16 +29,27 @@ if [ -z $resourcegroup ]; then
   exit 1
 fi
 
-echo RUNNING sudo ibmcloud update --force
+echo "My home is "
+echo $HOME
 
-sudo ibmcloud update --force
+echo RUNNING sudo ibmcloud update 
 
-echo "cat file"
-cat root/.bluemix/config.json
+echo "My home is "
+echo $HOME
 
+ibmcloud update --force
+
+echo "My home is "
+echo $HOME
+
+
+echo "My home is "
+echo $HOME
 
 echo RUNNIG FROM ACTION: ibmcloud login -a $url -r $region -g $resourcegroup --apikey $token
 ibmcloud login -a $url -r $region -g $resourcegroup --apikey $token
 
-echo "cat file"
-cat root/.bluemix/config.json
+echo "My home is "
+echo $HOME
+
+
