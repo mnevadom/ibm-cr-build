@@ -35,9 +35,12 @@ fi
 
 ibmcloud plugin install container-registry -r 'IBM Cloud'
 
-echo COMMAND: ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER --file $DOCKERFILE
+ibmcloud cr login
 
-ibmcloud cr build --file $DOCKERFILE -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER .
+docker build -f Dockerfile-okt -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER .
+
+docker push $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER
+
 
 echo "My home is "
 echo $HOME
