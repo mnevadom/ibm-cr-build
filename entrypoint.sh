@@ -32,7 +32,7 @@ fi
 ibmcloud plugin install container-registry -r 'IBM Cloud'
 
 
-ibmcloud --help
+ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER .
 
 echo "My home is "
 echo $HOME
