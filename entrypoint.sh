@@ -30,11 +30,7 @@ else
 fi
 
 
-echo RUNNING sudo ibmcloud update 
-
-
-echo RUNNIG FROM ACTION: ibmcloud login -a $url -r $region -g $resourcegroup --apikey $token
-
+ibmcloud --help
 
 echo "My home is "
 echo $HOME
