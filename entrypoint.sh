@@ -17,6 +17,9 @@ echo "REGISTRY_URL=${REGISTRY_URL}"
 echo "REGISTRY_NAMESPACE=${REGISTRY_NAMESPACE}"
 echo "IMAGE_NAME=${IMAGE_NAME}"
 echo "BUILD_NUMBER=${BUILD_NUMBER}"
+echo "DIR=${DIR}"
+echo "DOCKERFILE=${DOCKERFILE}"
+
 
 cd $DIR
 echo "ls ..."
@@ -32,6 +35,7 @@ fi
 
 ibmcloud plugin install container-registry -r 'IBM Cloud'
 
+echo COMMAND: ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER --file $DOCKERFILE
 
 ibmcloud cr build -t $REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER --file $DOCKERFILE
 
