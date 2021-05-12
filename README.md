@@ -28,7 +28,7 @@ This action is to build an image into IBM Cloud
 ## Ejemplo de uso
 
 docker build -t ibm-cr-build .
-docker run -ti ibm-cr-build de.icr.io dgp-registry postservice buildNrTest .
+docker run -ti ibm-cr-build de.icr.io dgp-registry postservice buildNrTest ../Dgp-Micros/PostService/postservice/
 
 ```yaml
 # File: .github/workflows/workflow.yml
