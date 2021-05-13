@@ -1,30 +1,34 @@
-# LOGIN Action IBMCloud
+# CR BUILD Action IBMCloud
 
-This action is to login into IBM Cloud
+This action is to build an image into IBM Cloud
 
 ## Entradas
 
-### `token`
-
-**Obligatorio** Token to use for login
-
 ### `url`
 
-**Opcional** UR ibm cloud
+**Mandatory** url of the server like: de.icr.io
 
-### `region`
+### `namespace`
 
-**Obligatorio** Region to connect to
+**Mandatory** namspace to build the image
 
-### `resourcegroup`
+### `imagename`
 
-**Obligatorio** Resource Group
+**Mandatory** image name
+
+### `buildnr`
+
+**Mandatory** build nr: typically commit nr
+
+### `dir`
+
+**Mandatory** dir to find Dockerfile into the repository
 
 
 ## Ejemplo de uso
 
-docker run -ti ibmlogin mytoken "cloud.ibm.com" "eu-de" test-resources
-
+docker build -t ibm-cr-build .
+docker run -ti ibm-cr-build de.icr.io dgp-registry postservice buildNrTest ../Dgp-Micros/PostService/postservice/
 
 ```yaml
 # File: .github/workflows/workflow.yml
@@ -38,11 +42,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - uses: mnevadom/ibmlogin@v1
+    - uses: mnevadom/ibm-cr-build@v1
       with:
-        token: ${{ secrets.IBM_TOKEN }}
-        url: "cloud.ibm.com"
-        region: "eu-de"
-        resourcegroup: test-resources
+        url: de.icr.io
+        namespace: dgp-registry
+        imagename: postservice
+        buildnr: c76d5f032667da9326bb8df7e96f06a4e3362044
+        dir: postservice
 
 ```
